@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 Rails.application.routes.draw do
 <<<<<<< HEAD
+<<<<<<< HEAD
   get 'home/main_page' => 'home#main_page'
   get 'home/login' => 'home#login'
   get 'home/upload' => 'home#upload'
@@ -12,6 +13,17 @@ Rails.application.routes.draw do
 
 =======
 >>>>>>> 37d17ee9647dff7662e3f228783a65dae70448e2
+=======
+  
+  devise_for :users
+  root 'home#index'
+  
+  
+  #resources :users
+  
+  
+  #root 'index'
+>>>>>>> 74130781a95fefc05d0b2cb0d25e52bb790698f5
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
