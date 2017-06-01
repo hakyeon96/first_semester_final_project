@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'home/main_page' => 'home#main_page'
   get 'home/login' => 'home#login'
   get 'home/upload' => 'home#upload'
@@ -9,9 +10,19 @@ Rails.application.routes.draw do
 =======
 >>>>>>> 87343b0bc7651d09f8a4241084ea3c44a712a1b2
 
+=======
+>>>>>>> 37d17ee9647dff7662e3f228783a65dae70448e2
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  
+  root 'home#main_page'
+#  post '/main' => 'home#main'
 
+  post '/create' => 'home#create'
+  get '/show' => 'home#show'
+  get '/main' => 'home#main'
+  get '/result' => 'home#result'
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
