@@ -1,0 +1,6 @@
+<%=form_tag(post_create_path, method: "post", multipart: true) do%>
+            Title <%=text_field_tag 'title'%>,<br><br>
+            Content <%=text_field_tag 'content'%><br><br>
+            Image <%=file_field_tag 'img_url', accept: 'image/*'%><br><br>
+            <%=submit_tag '완료'%>
+<%end%>
