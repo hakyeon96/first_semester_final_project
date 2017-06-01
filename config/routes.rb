@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'home/main_page' => 'home#main_page'
+  get 'home/login' => 'home#login'
+  get 'home/upload' => 'home#upload'
+  get 'home/view' => 'home#view'
+  
+  root 'home#main_page'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
