@@ -1,12 +1,9 @@
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
   gem 'carrierwave', '~> 1.0'
 
-=======
 #------------Devise gem 추가추가 --------
 gem 'devise'
->>>>>>> 74130781a95fefc05d0b2cb0d25e52bb790698f5
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

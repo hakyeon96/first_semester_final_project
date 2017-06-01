@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-<<<<<<< HEAD
   def main_page
   end
   
@@ -11,12 +10,12 @@ class HomeController < ApplicationController
   
   def view
   end
-=======
-    def index
+    
+  def index
         
-    end
-    def find
+  end
+  
+  def find
         
-    end
->>>>>>> 74130781a95fefc05d0b2cb0d25e52bb790698f5
+  end
 end

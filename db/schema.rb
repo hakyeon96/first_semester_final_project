@@ -11,11 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> dc10feba25abb1079350716f41e38da98d792885
 ActiveRecord::Schema.define(version: 20170531074547) do
 
   create_table "comments", force: :cascade do |t|
@@ -33,12 +28,6 @@ ActiveRecord::Schema.define(version: 20170531074547) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-<<<<<<< HEAD
-=======
-ActiveRecord::Schema.define(version: 0) do
->>>>>>> 37d17ee9647dff7662e3f228783a65dae70448e2
-=======
-ActiveRecord::Schema.define(version: 20170529112742) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -59,8 +48,5 @@ ActiveRecord::Schema.define(version: 20170529112742) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
->>>>>>> 74130781a95fefc05d0b2cb0d25e52bb790698f5
-=======
->>>>>>> dc10feba25abb1079350716f41e38da98d792885
 
 end
