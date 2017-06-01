@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Rails.application.routes.draw do
   get 'home/main_page' => 'home#main_page'
   get 'home/login' => 'home#login'
@@ -5,6 +6,8 @@ Rails.application.routes.draw do
   get 'home/view' => 'home#view'
   
   root 'home#main_page'
+=======
+>>>>>>> 87343b0bc7651d09f8a4241084ea3c44a712a1b2
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -38,7 +41,15 @@ Rails.application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-
+Rails.application.routes.draw do
+  root "posts#index"
+  
+  get 'posts/new' => 'posts#new'
+  
+  post 'posts/create' => 'posts#create', as: 'post_create'
+  post 'comments/create' => 'comments#create', as: 'comment_create'
+  
+  
   # Example resource route with more complex sub-resources:
   #   resources :products do
   #     resources :comments
