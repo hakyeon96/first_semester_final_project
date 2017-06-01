@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  get 'home/main_page' => 'home#main_page'
-  get 'home/login' => 'home#login'
-  get 'home/upload' => 'home#upload'
-  get 'home/view' => 'home#view'
-  
-  root 'home#main_page'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  
+  root 'home#main_page'
+#  post '/main' => 'home#main'
 
+  post '/create' => 'home#create'
+  get '/show' => 'home#show'
+  get '/main' => 'home#main'
+  get '/result' => 'home#result'
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

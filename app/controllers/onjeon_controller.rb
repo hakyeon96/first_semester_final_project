@@ -1,0 +1,2 @@
+class OnjeonController < ApplicationController
+end
