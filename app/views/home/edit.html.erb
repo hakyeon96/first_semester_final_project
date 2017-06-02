@@ -1,0 +1,8 @@
+<h1>수정하는 페이지</h1><br>
+
+<%=form_tag(post_update_path(id:@edit_post.id), method: "post", multipart: true) do%>
+            Title <%=text_field_tag 'title', @edit_post.title%>,<br><br>
+            Content <%=text_field_tag 'content', @edit_post.content %><br><br>
+            Image <%=file_field_tag 'img_url', accept: 'image/*' %><br><br>
+            <%=submit_tag '완료'%>
+<%end%>
