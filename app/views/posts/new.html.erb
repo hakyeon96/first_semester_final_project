@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 
 <% if user_signed_in?%>
->>>>>>> origin/jiwon-backend-dev
 <%=form_tag(post_create_path(id:current_user.id), method: "post", multipart: true) do%>
             Title <%=text_field_tag 'title'%>,<br><br>
             Content <%=text_field_tag 'content'%><br><br>
