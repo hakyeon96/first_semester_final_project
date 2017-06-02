@@ -7,4 +7,8 @@ class CommentsController < ApplicationController
         
         redirect_to "/"
     end
+    
+    def delete
+    
+    end
 end

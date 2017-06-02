@@ -1,8 +1,4 @@
 class PostsController < ApplicationController
-  def home
-    @post=Post.all
-  end
-  
   def new
     @post=Post.new
   end
@@ -12,6 +8,7 @@ class PostsController < ApplicationController
     @post.title=params[:title]
     @post.content=params[:content]
     @post.img_url=params[:img_url]
+    @post.user_id=params[:id]
     
     @post.save
     
