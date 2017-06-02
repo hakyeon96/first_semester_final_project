@@ -24,6 +24,13 @@
         <% else %>
         <li><%= link_to('로그인', new_user_session_path, :class => "page-scroll")  %>  </li>
         <% end %>
+        <!-- Search Form -->
+        <li>
+          <%= form_tag(posts_search_path, method: "search") do %>
+            <%= text_field_tag :term %>
+            <%= submit_tag 'Search' %>
+          <% end %>
+        </li>
         
       </ul>
     </div>

@@ -24,4 +24,9 @@ class PostsController < ApplicationController
   def index
     @post=Post.all
   end
+  
+  def search
+    @user = User.where(name: params[:term]).first
+    @sch_posts = Post.where(user_id: @user.id)
+  end
 end

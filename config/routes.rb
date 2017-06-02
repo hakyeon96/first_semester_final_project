@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   post 'posts/create/:id' => 'posts#create', as: 'post_create'
   post 'comments/create' => 'comments#create', as: 'comment_create'
   
+
+  post 'posts/search' => 'posts#search', as: 'posts_search'
   
   # Example resource route with more complex sub-resources:
   #   resources :products do
