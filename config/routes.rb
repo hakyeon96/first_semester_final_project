@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/show' => 'home#show'
   get '/main' => 'home#main'
   get '/result' => 'home#result'
-  get '/mypage' => 'home#mypage'
+  get '/mypage' => 'home#mypage', as: "mypage"
   get '/destroy/:post_id' => "home#destroy"
   get '/edit/:post_id' => "home#edit"
   post '/update/:post_id' => "home#update", as: 'post_update'
