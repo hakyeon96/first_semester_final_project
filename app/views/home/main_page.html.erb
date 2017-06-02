@@ -5,7 +5,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="/main"><i class="fa fa-sun-o"></i> 온전<strong></strong></a> </div>
+      <a class="navbar-brand" href="/home/main_page"><i class="fa fa-sun-o"></i> 온전<strong></strong></a> </div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -14,8 +14,29 @@
         <!--<li><a href="#services-section" class="page-scroll">Services</a></li>-->
         <li><a href="/posts/index" class="page-scroll">감상하기</a></li>
         <!--<li><a href="#about-section" class="page-scroll">About</a></li>-->
+<<<<<<< HEAD
         <li><a href="/posts/new" class="page-scroll">등록하기</a></li>
         <li><a href="/users/sign_in" class="page-scroll">로그인</a></li>
+=======
+        <!--<li><a href="#team-section" class="page-scroll">등록하기</a></li>-->
+        <!-- 여기 등록하기 루트 다시 만듬~~~ -->
+        <li><%= link_to('등록하기',posts_new_path, :class => "page-scroll") %></li>
+        <!-- 로그인 로그아웃 제대로 되는거 체크!~~~ -->
+        <% if user_signed_in? %>
+        
+        <li><%= link_to('로그아웃', destroy_user_session_path, :method => :delete, :class => "page-scroll")  %> </li>
+        <% else %>
+        <li><%= link_to('로그인', new_user_session_path, :class => "page-scroll")  %>  </li>
+        <% end %>
+        <!-- Search Form -->
+        <li>
+          <%= form_tag(posts_search_path, method: "search") do %>
+            <%= text_field_tag :term %>
+            <%= submit_tag 'Search' %>
+          <% end %>
+        </li>
+        
+>>>>>>> origin/jiwon-backend-dev
       </ul>
     </div>
     <!-- /.navbar-collapse --> 
@@ -28,7 +49,10 @@
   <div class="intro-text">
     <p style="font-size:100px"><strong>온라인 작품 전시관</strong><p>
     <p>나의 작품을 알려보세요!</p>
-    <a href="#contact-section" class="btn-default btn-lg page-scroll">등록하기</a> </div>
+    <!-- 여기 등록하기 루트 다시 만듬~~~ -->
+    <!--<a href="#contact-section" class="btn-default btn-lg page-scroll">등록하기</a> </div>-->
+    <%= link_to('등록하기',posts_new_path, :class => "btn-default btn-lg page-scroll") %></div>
+        
 </header>
 
 <!-- Services Section -->
@@ -84,20 +108,31 @@
       </ul>
       <div class="clearfix"></div>
     </div>
+    
+    
+    <!-- 포스트의 랜덤으로 이미지 띄우기 (링크빼고완료) -->
     <div class="row">
       <div class="portfolio-items" align= "middle">
+        <% @rand_posts.each do |post| %>
         <div class="col-sm-6 col-md-3 col-lg-3 web">
           <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/robot.png" rel="prettyPhoto">
+            <div class="hover-bg"> 
+              <!--<a href="/posts/index" rel="prettyPhoto">-->
+              
+              <!-- 아직 잘 안되는 부분 ㅠㅠ -->
+              
               <div class="hover-text">
-                <h4>공대</h4>
-                <small>전자/화학/컴퓨터/기계</small>
+                <h4><%= User.find(post.user_id).school%></h4>
+                <small><%= User.find(post.user_id).name%></small>
                 <div class="clearfix"></div>
               </div>
-              <img src="img/portfolio/robot.png" class="img-responsive" alt="Project Title" align="middle"> </a> </div>
-          </div>
+              <!-- 랜덤으로 이미지 뜨는거~~ 추가했슴당 -->
+              <!--<img src="img/portfolio/robot.png" class="img-responsive" alt="Project Title" align="middle"> </a> </div> -->
+              
+              <%= image_tag post.img_url, class: "img-responsive", alt: "Project Title", align: "middle" %> </div>          </div>
         </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 app">
+        <% end %>
+        <!--<div class="col-sm-6 col-md-3 col-lg-3 app">
           <div class="portfolio-item">
             <div class="hover-bg"> <a href="img/portfolio/cubes.png" rel="prettyPhoto">
               <div class="hover-text">
@@ -173,7 +208,7 @@
               </div>
               <img src="img/portfolio/ellipsis.png" class="img-responsive" alt="Project Title" align="middle"> </a> </div>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>
