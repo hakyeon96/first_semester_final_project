@@ -16,6 +16,10 @@ Rails.application.routes.draw do
 
   
   get 'posts/new' => 'posts#new'
+  get 'posts/index' => 'posts#index'
+  get 'comments/destroy/:id' => 'comments#destroy', as: 'comments_destroy'
+  get 'comments/edit/:id' => 'comments#edit', as: 'comments_edit'
+  post 'comments/update/:id' => 'comments#update', as: 'comments_update'
   
   post 'posts/create' => 'posts#create', as: 'post_create'
   post 'comments/create' => 'comments#create', as: 'comment_create'

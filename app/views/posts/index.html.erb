@@ -12,6 +12,10 @@
 
 <%post.comments.each do |comment|%>
     <%=comment.content%><br>
+    
+    <%= link_to '삭제하기', comments_destroy_path(id: comment.id) %><br>
+    <%= link_to '수정하기', comments_edit_path(id: comment.id) %><br>
+    
 <%end%>
 --------------------------------------<br>
 
