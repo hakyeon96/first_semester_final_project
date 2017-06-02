@@ -1,6 +1,9 @@
 <h1>
     Search!!!
 </h1>
+<% if @sch_posts == nil %>
+    <h4>You searched wrong user</h4>
+<% else %>
 <%@sch_posts.each do |post|%>
    Title <%=post.title%><br>
    Content <%=post.content%><br>
@@ -18,3 +21,4 @@
 --------------------------------------<br>
 
 <%end%>
+<% end %>

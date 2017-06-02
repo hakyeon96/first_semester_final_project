@@ -23,7 +23,12 @@ class PostsController < ApplicationController
   end
   
   def search
+    
     @user = User.where(name: params[:term]).first
-    @sch_posts = Post.where(user_id: @user.id)
+    if @user == nil
+      @sch_posts = nil
+    else
+      @sch_posts = Post.where(user_id: @user.id)
+    end
   end
 end

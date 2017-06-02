@@ -120,14 +120,16 @@
               <!-- 아직 잘 안되는 부분 ㅠㅠ -->
               
               <div class="hover-text">
-                <h4><%= User.find(post.user_id).school%></h4>
-                <small><%= User.find(post.user_id).name%></small>
-                <div class="clearfix"></div>
-              </div>
+                <% if User.find(post.user_id) %>
+                  <h4><%= User.find(post.user_id).school%></h4>
+                  <small><%= User.find(post.user_id).name%></small>
+                  <div class="clearfix"></div>
+                </div>
               <!-- 랜덤으로 이미지 뜨는거~~ 추가했슴당 -->
               <!--<img src="img/portfolio/robot.png" class="img-responsive" alt="Project Title" align="middle"> </a> </div> -->
               
               <%= image_tag post.img_url, class: "img-responsive", alt: "Project Title", align: "middle" %> </div>          </div>
+              <% end %>
         </div>
         <% end %>
         <!--<div class="col-sm-6 col-md-3 col-lg-3 app">
