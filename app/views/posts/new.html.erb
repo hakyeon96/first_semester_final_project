@@ -1,6 +1,13 @@
-<%=form_tag(post_create_path, method: "post", multipart: true) do%>
+
+<% if user_signed_in?%>
+<%=form_tag(post_create_path(id:current_user.id), method: "post", multipart: true) do%>
             Title <%=text_field_tag 'title'%>,<br><br>
             Content <%=text_field_tag 'content'%><br><br>
             Image <%=file_field_tag 'img_url', accept: 'image/*'%><br><br>
+            
             <%=submit_tag '완료'%>
 <%end%>
+<% else %>
+<h1>등록하려면 로그인하세요^_^</h1>
+<%= link_to('로그인', new_user_session_path, :class => "page-scroll")  %>
+<% end %>

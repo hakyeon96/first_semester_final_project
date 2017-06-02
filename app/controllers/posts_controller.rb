@@ -9,9 +9,12 @@ class PostsController < ApplicationController
   
   def create
     @post=Post.new
+    
     @post.title=params[:title]
     @post.content=params[:content]
     @post.img_url=params[:img_url]
+    
+    @post.user_id = params[:id]
     
     @post.save
     
