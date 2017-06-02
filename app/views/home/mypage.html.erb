@@ -1,0 +1,9 @@
+<h1>My Page</h1>
+
+<%@my.each do |post|%>
+   Title <%=post.title%><br>
+   Content <%=post.content%><br>
+   Photo <%=image_tag post.img_url, style:"width:250px;"%><br>
+   <a href="/edit/<%=post.id%>">Edit</a><br>
+   <a href="/destroy/<%=post.id%>">Delete</a><br>
+<%end%>

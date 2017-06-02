@@ -24,4 +24,8 @@ class CommentsController < ApplicationController
         redirect_to "/posts/index"
         
     end
+    
+    def delete
+    
+    end
 end
