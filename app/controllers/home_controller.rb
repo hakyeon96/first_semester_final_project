@@ -22,7 +22,11 @@ class HomeController < ApplicationController
   end
   
   def mypage
+    if user_signed_in?
     @my = Post.where(user_id: current_user.id)
+    else
+      @my = nil
+    end
   end
   
   def edit

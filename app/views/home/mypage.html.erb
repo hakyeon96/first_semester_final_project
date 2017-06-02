@@ -1,5 +1,8 @@
 <h1>My Page</h1>
-
+<% if @my== nil %>
+<h2>로그인하세요</h2>
+<%= link_to('로그인', new_user_session_path)  %>
+<% else %>
 <%@my.each do |post|%>
    Title <%=post.title%><br>
    Content <%=post.content%><br>
@@ -7,3 +10,4 @@
    <a href="/edit/<%=post.id%>">Edit</a><br>
    <a href="/destroy/<%=post.id%>">Delete</a><br>
 <%end%>
+<% end %>
