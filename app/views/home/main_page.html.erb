@@ -1,48 +1,44 @@
-<!-- Navigation
-    ==========================================-->
+ <!--Navigation-->
 <nav id="menu" class="navbar navbar-default navbar-fixed-top">
   <div class="container"> 
-    <!-- Brand and toggle get grouped for better mobile display -->
+     <!--Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="/home/main_page"><i class="fa fa-sun-o"></i> 온전<strong></strong></a> </div>
+      <a class="navbar-brand" href="/"><i class="fa fa-sun-o"></i> 온전<strong></strong></a> </div>
     
-    <!-- Collect the nav links, forms, and other content for toggling -->
+     <!--Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#home" class="page-scroll">홈</a></li>
-        <!--<li><a href="#services-section" class="page-scroll">Services</a></li>-->
+        <li><a href="/mypage" class="page-scroll">마이페이지</a></li>
         <li><a href="/posts/index" class="page-scroll">감상하기</a></li>
-        <!--<li><a href="#about-section" class="page-scroll">About</a></li>-->
-        <!--<li><a href="/posts/new" class="page-scroll">등록하기</a></li>-->
-        <!--<li><a href="/users/sign_in" class="page-scroll">로그인</a></li>-->
-        <!--<li><a href="#team-section" class="page-scroll">등록하기</a></li>-->
-        <!-- 여기 등록하기 루트 다시 만듬~~~ -->
+
         <li><%= link_to('등록하기',posts_new_path, :class => "page-scroll") %></li>
-        <!-- 로그인 로그아웃 제대로 되는거 체크!~~~ -->
+         <!--로그인 로그아웃 제대로 되는거 체크!~~~ -->
         <% if user_signed_in? %>
         
         <li><%= link_to('로그아웃', destroy_user_session_path, :method => :delete, :class => "page-scroll")  %> </li>
         <% else %>
         <li><%= link_to('로그인', new_user_session_path, :class => "page-scroll")  %>  </li>
         <% end %>
-        <!-- Search Form -->
+         <!--Search Form -->
         <li>
           <%= form_tag(posts_search_path, method: "search") do %>
             <%= text_field_tag :term %>
-            <%= submit_tag 'Search' %>
+            <%= submit_tag '검색' %>
           <% end %>
         </li>
+        
 
 
       </ul>
     </div>
-    <!-- /.navbar-collapse --> 
+     <!--/.navbar-collapse -->
   </div>
-  <!-- /.container-fluid --> 
+   <!--/.container-fluid -->
 </nav>
 
-<!-- Header -->
+ <!--Header -->
 <header class="text-center" name="home">
   <div class="intro-text">
     <p style="font-size:100px"><strong>온라인 작품 전시관</strong><p>
@@ -53,38 +49,9 @@
         
 </header>
 
-<!-- Services Section -->
-<!--<div id="services-section" class="text-center">-->
-<!--  <div class="container">-->
-<!--    <div class="section-title center">-->
-<!--      <h2>Our Services</h2>-->
-<!--      <hr>-->
-<!--      <div class="clearfix"></div>-->
-<!--      <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus. Eleifend pellentesque natoque faucibus magna ut etiam.</p>-->
-<!--    </div>-->
-<!--    <div class="space"></div>-->
-<!--    <div class="row">-->
-<!--      <div class="col-md-3 col-sm-6 service"> <i class="fa fa-desktop"></i>-->
-<!--        <h4>Web Design</h4>-->
-<!--        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>-->
-<!--      </div>-->
-<!--      <div class="col-md-3 col-sm-6 service"> <i class="fa fa-gears"></i>-->
-<!--        <h4>App Development</h4>-->
-<!--        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque.</p>-->
-<!--      </div>-->
-<!--      <div class="col-md-3 col-sm-6 service"> <i class="fa fa-rocket"></i>-->
-<!--        <h4>Branding</h4>-->
-<!--        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>-->
-<!--      </div>-->
-<!--      <div class="col-md-3 col-sm-6 service"> <i class="fa fa-line-chart"></i>-->
-<!--        <h4>Marketing</h4>-->
-<!--        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque.</p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+
 <!-- Portfolio Section -->
-<!--이동현 수정본-->
+
 <div id="works-section">
   <div class="container"> <!-- Container -->
     <div class="section-title text-center center">
@@ -124,7 +91,7 @@
                   <h4><%= User.find(post.user_id).school%></h4>
                   <small><%= User.find(post.user_id).name%></small>
                   <div class="clearfix"></div>
-                </div>
+              </div>
               <!-- 랜덤으로 이미지 뜨는거~~ 추가했슴당 -->
               <!--<img src="img/portfolio/robot.png" class="img-responsive" alt="Project Title" align="middle"> </a> </div> -->
               
@@ -154,61 +121,7 @@
               <img src="img/portfolio/molecule.png" class="img-responsive" alt="Project Title" align="middle"> </a> </div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/first-aid-kit.png" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>의대</h4>
-                <small>의학/간호/약학</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/first-aid-kit.png" class="img-responsive" alt="Project Title" align="middle"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 app">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/economic-investment.png" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>상경대</h4>
-                <small>경제/경영</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/economic-investment.png" class="img-responsive" alt="Project Title" align="middle"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 branding">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/classroom.png" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>교육대</h4>
-                <small>교육</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/classroom.png" class="img-responsive" alt="Project Title" align="middle"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 branding app">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/paint-board-and-brush.png" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>예체능</h4>
-                <small>음대/체대</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/paint-board-and-brush.png" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/ellipsis.png" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>기타</h4>
-                <small>등등</small>
-                <div class="clearfix"></div>
-              </div>
-              <img src="img/portfolio/ellipsis.png" class="img-responsive" alt="Project Title" align="middle"> </a> </div>
-          </div>
-        </div>-->
+        
       </div>
     </div>
   </div>
@@ -239,32 +152,34 @@
 <!--  </div>-->
 <!--</div>-->
 <!-- Achievements Section -->
-<div id="achievements" class="section dark-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-3">
-        <div class="achievement-box"> <span class="count">2300</span>
-          <h4>등록된 작품 수</h4>
+      <div>  
+        <div id="achievements" class="section dark-bg">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-3">
+                <div class="achievement-box"> <span class="count">2300</span>
+                  <h4>등록된 작품 수</h4>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <div class="achievement-box"> <span class="count">329</span>
+                  <h4>등록한 작가 수</h4>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <div class="achievement-box"> <span class="count">230</span>
+                  <h4>등록한 학교</h4>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <div class="achievement-box"> <span class="count">31458</span>
+                  <h4>누적 방문자 수</h4>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-3">
-        <div class="achievement-box"> <span class="count">329</span>
-          <h4>등록한 작품 수 수</h4>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-3">
-        <div class="achievement-box"> <span class="count">230</span>
-          <h4>대상 학과</h4>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-3">
-        <div class="achievement-box"> <span class="count">726</span>
-          <h4>누적 방문자 수</h4>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <!-- Team Section -->
 <!--<div id="team-section" class="text-center">-->
 <!--  <div class="container">-->

@@ -22,7 +22,11 @@ class HomeController < ApplicationController
   end
   
   def mypage
+    if user_signed_in?
     @my = Post.where(user_id: current_user.id)
+    else
+      @my = nil
+    end
   end
   
   def edit
@@ -36,7 +40,7 @@ class HomeController < ApplicationController
     @edit_post.img_url=params[:img_url]
     @edit_post.save
         
-        redirect_to "/mypage"
+    redirect_to "/mypage"
   end
   
   def destroy
